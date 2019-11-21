@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+</head>
+<body>
+    
+    <form>
+        Value 1: <input type="number" id="value1">
+        Value 2: <input type="number" id="value2">
+        Operator:
+        <select id="operator">
+          <option value="add">+</option>
+          <option value="min">-</option>
+          <option value="div">/</option>
+          <option value="mul">*</option>
+        </select>
+        <button type="button" onclick="calc()">Calculate</button>
+        Result: <input type="number" id="result">
+      </form>
+<script>
+
+function calc () {
+        let val1 = document.getElementById("value1").value;
+        let val2 = document.getElementById("value2").value;
+        let op = document.getElementById("operator").value;
+        let calculate;
+        if (op == "add") {
+            calculate = parseFloat(val1) + parseFloat(val2);
+        }
+         else  if (op == "min") {
+            calculate = parseFloat(val1) - parseFloat(val2);
+        }
+        else  if (op == "div") {
+            calculate = parseFloat(val1) / parseFloat(val2);
+        }
+        else  if (op == "mul") {
+            calculate = parseFloat(val1) * parseFloat(val2);
+        }
+        document.getElementById("result").value = calculate;
+    
+}
+
+</script>
+</body>
+</html>
